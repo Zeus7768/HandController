@@ -1,0 +1,77 @@
+HandController — Third-party notices
+====================================
+
+HandController is released under the MIT License (see LICENSE).
+It uses the third-party components below. They keep their own licenses.
+Full license texts are in the licenses/ folder (copied from the installed
+packages by tools/collect_licenses.py; versions checked on 2026-10-06).
+
+
+Main runtime dependencies
+-------------------------
+
+1. MediaPipe 1.0.1 — hand landmark detection
+   License: Apache License 2.0
+   https://github.com/google-ai-edge/mediapipe
+
+2. MediaPipe Hand Landmarker model (hand_landmarker.task)
+   Shipped unmodified with this project, never downloaded at runtime.
+   License: Apache License 2.0 (MediaPipe project)
+   https://ai.google.dev/edge/mediapipe/solutions/vision/hand_landmarker
+
+3. OpenCV (opencv-python / opencv-contrib-python 5.0.0.93) — webcam, display
+   License: Apache License 2.0; bundled third-party components are listed in
+   licenses/opencv-python/LICENSE-3RD-PARTY.txt
+   https://github.com/opencv/opencv-python
+
+4. NumPy 2.5.2 — landmark maths
+   License: BSD-3-Clause (and the component licenses in licenses/numpy)
+   https://numpy.org
+
+5. pynput 1.8.2 — keyboard and mouse simulation (SendInput)
+   License: GNU Lesser General Public License v3 (LGPL-3.0)
+   https://github.com/moses-palmer/pynput
+   pynput is used unmodified. In HandController.exe it is packed inside the
+   PyInstaller archive. The complete HandController source code and build
+   script (build_exe.bat, HandController.spec) are public, so you can replace
+   pynput with a modified version and rebuild the executable.
+
+6. scikit-learn 1.9.1 (optional SVM / Random Forest), with SciPy 1.18.1,
+   joblib, threadpoolctl
+   License: BSD-3-Clause
+   https://scikit-learn.org
+
+
+Packages included in the Windows build as dependencies of the above
+-------------------------------------------------------------------
+
+matplotlib (Matplotlib license), contourpy, kiwisolver, cycler (BSD-3-Clause),
+fonttools, pyparsing, six, narwhals, setuptools (MIT), cffi (MIT-0),
+pycparser, cloudpickle (BSD-3-Clause), Pillow (MIT-CMU),
+python-dateutil (Apache-2.0 / BSD-3-Clause), packaging (Apache-2.0 or
+BSD-2-Clause), absl-py, flatbuffers (Apache-2.0),
+certifi (MPL-2.0, unmodified; source: https://github.com/certifi/python-certifi),
+Python 3.13 runtime (Python Software Foundation License).
+
+
+Build tool (not redistributed)
+------------------------------
+
+PyInstaller 6.22.2 — packages HandController.exe.
+License: GPLv2-or-later with the PyInstaller bootloader exception, which allows
+distributing programs built with it under any license.
+https://pyinstaller.org
+
+
+Artwork
+-------
+
+The HandController icon is drawn by tools/make_icon.py and is part of this
+project (MIT). No third-party artwork is included.
+
+
+Privacy note
+------------
+
+HandController uses the webcam only on the local computer. It contains no code
+that uploads webcam images, videos, landmarks or gesture files to the Internet.
